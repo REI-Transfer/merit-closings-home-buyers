@@ -324,6 +324,7 @@ export function SurveyCard({ phoneDisplay = "(800) 000-0000", phoneHref = "80000
           timeline: surveyData.timeline,
           reason: surveyData.reason,
           ownershipLength: surveyData.ownershipLength,
+          listedOnMarket: surveyData.listedOnMarket,
           source: 'Survey Form',
           submittedAt: new Date().toISOString(),
           qualified,
