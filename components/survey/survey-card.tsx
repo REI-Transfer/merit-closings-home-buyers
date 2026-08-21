@@ -121,8 +121,7 @@ function isQualifiedForMeta(d: SurveyData): boolean {
   const okType = d.propertyType === 'single-family' || d.propertyType === 'multi-family'
   const okListed = d.listedOnMarket === 'not-listed'
   const okOwner = d.isLegalOwner !== 'no'
-  const okCondition = d.condition !== 'excellent'
-  return okType && okListed && okOwner && okCondition
+  return okType && okListed && okOwner
 }
 function leadQuality(score: number): 'premium' | 'standard' | 'low' {
   if (score >= 6) return 'premium'
@@ -133,7 +132,6 @@ function disqualifyReasonFor(d: SurveyData): string {
   if (d.propertyType !== 'single-family' && d.propertyType !== 'multi-family') return 'property_type'
   if (d.listedOnMarket !== 'not-listed') return 'listed'
   if (d.isLegalOwner === 'no') return 'not_owner'
-  if (d.condition === 'excellent') return 'excellent_condition'
   return 'unknown'
 }
 // ──────────────────────────────────────────────────────────────────────
